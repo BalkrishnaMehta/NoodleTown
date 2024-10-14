@@ -1,0 +1,30 @@
+.tabs ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.tabs ul li {
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  background-color: #eceef6;
+}
+
+.current {
+  background-color: var(--var-primary-color) !important;
+}
+
+@media screen and (max-width: 500px) {
+  .tabs ul {
+    padding: 0 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-evenly;
+  }
+
+  .tabs ul li {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

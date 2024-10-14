@@ -1,0 +1,47 @@
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+}
+
+.content::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -50px;
+  left: 0;
+  background: url("../assets/recipieLeft.png") no-repeat left top;
+  background-size: 100px 150px;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -50px;
+  right: 0;
+  background: url("../assets/recipieRight.png") no-repeat right top;
+  background-size: 100px 150px;
+}
+
+.carousal {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.carousal::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .content::after,
+  .content::before {
+    background-size: 50px 100px;
+  }
+}
