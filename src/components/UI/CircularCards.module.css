@@ -1,0 +1,17 @@
+.centerText {
+  align-items: center;
+  text-align: center;
+}
+
+.divider {
+  height: 0.1rem;
+  width: 10rem;
+  background-color: var(--var-primary-color);
+}
+
+.circular_card img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 50%;
+}

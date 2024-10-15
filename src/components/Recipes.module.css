@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 4.5rem;
   position: relative;
 }
 
@@ -43,5 +43,12 @@
   .content::after,
   .content::before {
     background-size: 50px 100px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 850px) {
+  .content::after,
+  .content::before {
+    background-size: 75px 125px;
   }
 }

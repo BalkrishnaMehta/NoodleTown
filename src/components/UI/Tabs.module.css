@@ -8,6 +8,12 @@
   padding: 1rem 3rem;
   border-radius: 2rem;
   background-color: #eceef6;
+  cursor: pointer;
+}
+
+.tabs ul li button {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .current {
@@ -21,6 +27,18 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: space-evenly;
+  }
+
+  .tabs ul li {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 850px) {
+  .tabs ul {
+    padding: 0 2.5rem;
+    gap: 1rem;
   }
 
   .tabs ul li {

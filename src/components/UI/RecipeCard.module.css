@@ -12,6 +12,10 @@
   border-radius: 1rem;
 }
 
+.card:last-child {
+  margin-right: 2rem;
+}
+
 .title_and_time {
   width: 100%;
   display: flex;
@@ -66,5 +70,11 @@
 @media screen and (max-width: 500px) {
   .card {
     flex: 1 0 220px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 850px) {
+  .card {
+    flex: 1 0 240px;
   }
 }

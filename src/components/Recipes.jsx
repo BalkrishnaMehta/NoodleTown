@@ -21,7 +21,7 @@ export default function Recipes() {
   }
 
   return (
-    <section className="my-2">
+    <section className="my-2 inter-font">
       <div className={styles.content}>
         <h2>Popular Recipes</h2>
         <Tabs
