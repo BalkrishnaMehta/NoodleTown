@@ -1,26 +1,10 @@
 import Card from "./UI/Card";
+import { suggestions } from "../utils/data";
 
 export default function Suggestions() {
-  const suggestions = [
-    {
-      primaryText: "Dining out",
-      secondaryText: "Explore curated lists of top restraunts",
-      image: "assets/suggestions/suggestion1.png",
-    },
-    {
-      primaryText: "Dining out",
-      secondaryText: "Explore curated lists of top restraunts",
-      image: "assets/suggestions/suggestion2.png",
-    },
-    {
-      primaryText: "Dining out",
-      secondaryText: "Explore curated lists of top restraunts",
-      image: "assets/suggestions/suggestion3.png",
-    },
-  ];
   return (
-    <section className="my-2">
-      <div className="container p-2 row">
+    <section className="p-2">
+      <div className="container row">
         {suggestions.map((suggestion, index) => {
           return (
             <Card
@@ -29,6 +13,8 @@ export default function Suggestions() {
               secondaryText={suggestion.secondaryText}
               image={suggestion.image}
               shadow
+              paraPadding
+              imgHeightClass={"img_height1"}
               borderRadius={"top"}
             />
           );

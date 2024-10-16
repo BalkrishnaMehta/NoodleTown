@@ -1,4 +1,5 @@
 .centerText {
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
 }
@@ -10,8 +11,30 @@
 }
 
 .circular_card img {
-  width: 10rem;
-  height: 10rem;
+  width: 6rem;
+  height: 6rem;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.circular_card p {
+  font-weight: 600;
+}
+
+.brand_title {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 500px) and (max-width: 850px) {
+  .circular_card img {
+    width: 4rem;
+    height: 4rem;
+  }
+  .centerText {
+    justify-content: space-evenly !important;
+  }
+
+  .brand_title {
+    margin-top: 1rem;
+  }
 }

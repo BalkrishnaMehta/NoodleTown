@@ -5,6 +5,10 @@ export default function ({
   secondaryText,
   image,
   shadow,
+  paraPadding,
+  imgHeightClass,
+  overlayText,
+  flexBasis,
   borderRadius,
 }) {
   let radiusClass = "";
@@ -16,10 +20,22 @@ export default function ({
   }
 
   return (
-    <div className={`${styles.card} ${shadow ? styles.shadow : ""}`}>
-      <img src={image} alt="" className={styles[radiusClass]} />
-      <h4>{primaryText}</h4>
-      <p>{secondaryText}</p>
+    <div
+      className={`${styles.card} ${shadow ? styles.shadow : ""} ${
+        flexBasis ? styles.flex_basis : ""
+      }`}>
+      <img
+        src={image}
+        alt={primaryText}
+        className={`${styles[radiusClass]} ${styles[imgHeightClass]}`}
+      />
+      <div
+        className={`${paraPadding ? styles.data : ""} ${
+          overlayText ? styles.overlay : ""
+        }`}>
+        <h4>{primaryText}</h4>
+        <p>{secondaryText}</p>
+      </div>
     </div>
   );
 }

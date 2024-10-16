@@ -1,5 +1,38 @@
 const imagePath = "assets/recipes";
 
+export const suggestions = [
+  {
+    primaryText: "Dining out",
+    secondaryText: "Explore curated lists of top restraunts",
+    image: "assets/suggestions/suggestion1.png",
+  },
+  {
+    primaryText: "Dining out",
+    secondaryText: "Explore curated lists of top restraunts",
+    image: "assets/suggestions/suggestion2.png",
+  },
+  {
+    primaryText: "Dining out",
+    secondaryText: "Explore curated lists of top restraunts",
+    image: "assets/suggestions/suggestion3.png",
+  },
+];
+
+export const cuisines = [
+  {
+    title: "Chicken Noodles",
+    image: "assets/cuisines/cuisine1.png",
+  },
+  {
+    title: "French Fries",
+    image: "assets/cuisines/cuisine2.png",
+  },
+  {
+    title: "Avacado Mint Noodles",
+    image: "assets/cuisines/cuisine3.png",
+  },
+];
+
 export const Pizza = [
   {
     title: "Eatalian Pizza",
@@ -222,5 +255,116 @@ export const Drinks = [
     description: "Chilled sparkling water 500ml",
     price: 800,
     image: `${imagePath}/Drinks/recipe6.png`,
+  },
+];
+
+export const brands = [
+  {
+    title: "La Pino'z Pizza",
+    image: "assets/brands/brand1.png",
+  },
+  {
+    title: "McDonald's",
+    image: "assets/brands/brand2.png",
+  },
+  {
+    title: "Starbucks",
+    image: "assets/brands/brand3.png",
+  },
+  {
+    title: "Burger King",
+    image: "assets/brands/brand4.png",
+  },
+  {
+    title: "KFC",
+    image: "assets/brands/brand5.png",
+  },
+  {
+    title: "Coffee Culture",
+    image: "assets/brands/brand6.png",
+  },
+];
+
+export const foods = [
+  {
+    image: "assets/foods/food1.jpg",
+    title: "Vadapav",
+    time: "20 Min",
+  },
+  {
+    image: "assets/foods/food2.jpg",
+    title: "Panipuri",
+    time: "20 Min",
+  },
+  {
+    image: "assets/foods/food3.jpg",
+    title: "Pav Bhaji",
+    time: "20 Min",
+  },
+  {
+    image: "assets/foods/food4.jpg",
+    title: "Ice-Cream",
+    time: "20 Min",
+  },
+  {
+    image: "assets/foods/food5.jpg",
+    title: "Sandwich",
+    time: "20 Min",
+  },
+  {
+    image: "assets/foods/food6.jpg",
+    title: "Pizza",
+    time: "20 Min",
+  },
+];
+
+export const featured = [
+  {
+    image: "assets/featured/category1.jpg",
+    title: "Veggie Friendly",
+    time: "29 Places Near You",
+  },
+  {
+    image: "assets/featured/category2.jpg",
+    title: "Trending this week",
+    time: "29 Places Near You",
+  },
+  {
+    image: "assets/featured/category3.jpg",
+    title: "Authentic",
+    time: "29 Places Near You",
+  },
+];
+
+export const cart = [
+  {
+    title: "Eatalian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    price: 5000,
+    image: `${imagePath}/Pizza/recipe1.png`,
+  },
+  {
+    title: "Sicilian Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    price: 1000,
+    image: `${imagePath}/Pizza/recipe2.png`,
+  },
+  {
+    title: "Margarita",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    price: 2000,
+    image: `${imagePath}/Pizza/recipe3.png`,
+  },
+  {
+    title: "Speedy Pizza",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    price: 7000,
+    image: `${imagePath}/Pizza/recipe4.png`,
+  },
+  {
+    title: "L’appetitosa",
+    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+    price: 12000,
+    image: `${imagePath}/Pizza/recipe5.png`,
   },
 ];

@@ -1,31 +1,18 @@
-import Banner from "../components/Banner";
 import Hero from "../components/Hero";
+import Suggestions from "../components/Suggestions";
+import CircularCards from "../components/UI/CircularCards";
+import { cuisines } from "../utils/data";
 import Recipes from "../components/Recipes";
+import Banner from "../components/Banner";
 import bannerPizza from "../../src/assets/bannerPizza.png";
-import Offer from "../components/Offer";
+import MasonaryGrid from "../components/UI/MasonaryGrid";
 import burger from "../assets/offers/burger.png";
 import icecream from "../assets/offers/icecream.png";
 import fruits from "../assets/offers/fruits.png";
 import Social from "../components/Social";
 import Footer from "../components/UI/Footer";
-import Suggestions from "../components/Suggestions";
-import CircularCards from "../components/UI/CircularCards";
 
 export default function Home() {
-  const cuisines = [
-    {
-      title: "Chicken Noodles",
-      image: "assets/cuisines/cuisine1.png",
-    },
-    {
-      title: "French Fries",
-      image: "assets/cuisines/cuisine2.png",
-    },
-    {
-      title: "Avacado Mint Noodles",
-      image: "assets/cuisines/cuisine3.png",
-    },
-  ];
   return (
     <>
       <Hero />
@@ -33,6 +20,9 @@ export default function Home() {
       <CircularCards
         title={"Our best delivered cuisines"}
         data={cuisines}
+        containerClass="container"
+        headingClass
+        divider
         description={
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
           eiusmod tempor incididunt ut labore et dolore"
@@ -45,12 +35,17 @@ export default function Home() {
           town
         </h1>
       </Banner>
-      <Offer
-        primaryImage={burger}
-        offerText={"Buy 2 get 1 free"}
-        secondaryImage={icecream}
-        ternaryImage={fruits}
-      />
+      <section className="p-2">
+        <div className="container">
+          <MasonaryGrid
+            primaryImage={burger}
+            overlayText={"Buy 2 get 1 free"}
+            secondaryImage={icecream}
+            ternaryImage={fruits}
+            rounded
+          />
+        </div>
+      </section>
       <Social />
       <Footer />
     </>

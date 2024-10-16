@@ -1,0 +1,86 @@
+.card {
+  background-color: #f9f9f9;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  flex-basis: 30%;
+  flex-shrink: 0;
+}
+
+.card img {
+  background-color: black;
+  height: 10rem;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.data {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data div > h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.secondary_text {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #848484;
+}
+
+.coupon_form {
+  width: 100%;
+}
+
+.coupon_form input {
+  width: 70%;
+  padding: 0.8rem 1.2rem;
+  background-color: #f3f3f3;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.coupon_form input:focus {
+  outline: none;
+  border: 2px solid #ffa500;
+}
+
+.coupon_form button {
+  margin-left: 0.3rem;
+  width: 28%;
+  padding: 0.8rem 1.2rem;
+}
+
+.quantity {
+  padding: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.amount_row {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order_btn {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 850px) {
+  .card {
+    flex-basis: 47.5%;
+  }
+}

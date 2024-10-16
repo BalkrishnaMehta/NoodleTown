@@ -12,7 +12,7 @@ export default function Social() {
   return (
     <section className={`p-2 inter-font ${styles.social}`}>
       <div className={`container ${styles.gridContainer}`}>
-        <div className="grid gap-2">
+        <div className="grid gap-1">
           {pizzas.map((pizza, index) => (
             <img key={index} src={pizza} alt={`pizza${index}`} />
           ))}

@@ -4,9 +4,28 @@
   border-radius: 0.5rem;
 }
 
+.card {
+  position: relative;
+}
+
+.flex_basis {
+  flex-basis: 400px;
+}
+
 .card img {
-  height: 8rem;
   object-fit: cover;
+}
+
+.img_height1 {
+  height: 8rem;
+}
+
+.img_height2 {
+  height: 15rem;
+}
+
+.img_height3 {
+  height: 30rem;
 }
 
 .border_top {
@@ -15,16 +34,45 @@
 }
 
 .border_all {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+}
+
+.data {
+  padding: 0 1rem 1rem 1rem;
 }
 
 .card h4 {
   font-size: 1rem;
   font-weight: 400;
-  padding: 0 1rem;
 }
+
 .card p {
+  color: #999999;
   font-weight: 300;
-  font-size: 0.9rem;
-  padding: 0 1rem 1rem 1rem;
+  font-size: 0.7rem;
+}
+
+.card h4 {
+  font-weight: 600;
+}
+
+.data p {
+  color: black;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  color: #ffffff;
+}
+
+.overlay p {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 500px) {
+  .img_height2 {
+    height: 8rem;
+  }
 }

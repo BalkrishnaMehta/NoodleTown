@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
 import { ShoppingCart } from "lucide-react";
 
-export default function Nav({ textWhite }) {
+export default function Navbar({ textWhite }) {
   let cartItemCount = 5;
   return (
     <nav className={styles.nav}>
