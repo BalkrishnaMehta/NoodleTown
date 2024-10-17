@@ -35,13 +35,14 @@ export default function Home() {
           town
         </h1>
       </Banner>
-      <section className="p-2">
+      <section className="p-2 offer-section">
         <div className="container">
           <MasonaryGrid
             primaryImage={burger}
             overlayText={"Buy 2 get 1 free"}
             secondaryImage={icecream}
             ternaryImage={fruits}
+            gridGap2x
             rounded
           />
         </div>

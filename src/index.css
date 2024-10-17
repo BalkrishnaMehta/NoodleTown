@@ -67,10 +67,21 @@ img {
   overflow: hidden;
 }
 
+.detailpage-container {
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+
 .row {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
+}
+
+.row2 {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .grid {
@@ -103,13 +114,44 @@ img {
   border-radius: 0.2rem;
 }
 
+.btn-outline {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ffa500;
+  color: black;
+  border-radius: 0.2rem;
+}
+
+.btn-outline:hover {
+  background-color: #ffa500;
+  color: #f3f3f3;
+}
+
+.offer-section {
+  margin: 6rem 0;
+}
+
+.brand-image {
+  width: 16rem;
+  border-radius: 1rem;
+}
+
 @media screen and (max-width: 500px) {
-  .row {
-    display: flex;
+  .row,
+  .row2 {
     flex-direction: column;
   }
 
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .offer-section {
+    margin: 4rem 0;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 850px) {
+  .offer-section {
+    margin: 2rem 0;
   }
 }

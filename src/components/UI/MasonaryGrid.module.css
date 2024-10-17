@@ -10,6 +10,10 @@
   gap: 1rem;
 }
 
+.grid_item_height {
+  grid-auto-rows: 30vh;
+}
+
 .grid img {
   object-fit: cover;
   height: 100%;
@@ -42,6 +46,10 @@
     grid-auto-rows: auto;
   }
 
+  .grid_item_height {
+    grid-auto-rows: 44.6vh;
+  }
+
   .main {
     grid-column: 1 / 3;
     grid-row: 1;
@@ -58,6 +66,10 @@
     margin-bottom: 2rem;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
+  }
+
+  .grid_item_height {
+    grid-auto-rows: 30vh;
   }
 
   .main {

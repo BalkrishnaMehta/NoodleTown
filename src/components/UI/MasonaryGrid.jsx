@@ -5,10 +5,15 @@ export default function MasonaryGrid({
   secondaryImage,
   ternaryImage,
   overlayText,
+  gridGap2x,
   rounded,
+  gridItemHeight,
 }) {
   return (
-    <div className={styles.grid}>
+    <div
+      className={`${styles.grid} ${gridGap2x ? styles.gap2x : ""} ${
+        gridItemHeight ? styles.grid_item_height : ""
+      }`}>
       <div className={styles.main}>
         <img
           src={primaryImage}
