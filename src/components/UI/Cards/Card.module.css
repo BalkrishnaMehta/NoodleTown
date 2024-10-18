@@ -43,17 +43,12 @@
 
 .card h4 {
   font-size: 1rem;
-  font-weight: 400;
 }
 
 .card p {
   color: #999999;
   font-weight: 300;
   font-size: 0.7rem;
-}
-
-.card h4 {
-  font-weight: 600;
 }
 
 .data p {

@@ -5,7 +5,7 @@ export default function DetailMenuImage({
   return (
     <section className="p-2">
       <div className="detailpage-container">
-        <h4>Menu</h4>
+        <h4 className="text-500">Menu</h4>
         <div className="row2 gap-2 my-2">
           <div>
             <img src={diningMenuImage} className="brand-image" />

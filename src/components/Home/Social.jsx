@@ -1,10 +1,10 @@
 import styles from "./Social.module.css";
-import pizza1 from "../assets/social/pizza1.png";
-import pizza2 from "../assets/social/pizza2.png";
-import pizza3 from "../assets/social/pizza3.png";
-import pizza4 from "../assets/social/pizza4.png";
-import pizza5 from "../assets/social/pizza5.png";
-import pizza6 from "../assets/social/pizza6.png";
+import pizza1 from "../../assets/social/pizza1.png";
+import pizza2 from "../../assets/social/pizza2.png";
+import pizza3 from "../../assets/social/pizza3.png";
+import pizza4 from "../../assets/social/pizza4.png";
+import pizza5 from "../../assets/social/pizza5.png";
+import pizza6 from "../../assets/social/pizza6.png";
 import { Instagram } from "lucide-react";
 
 export default function Social() {

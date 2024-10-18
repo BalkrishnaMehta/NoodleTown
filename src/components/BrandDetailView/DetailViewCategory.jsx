@@ -1,13 +1,26 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./DetailViewCategory.module.css";
+import { cartActions } from "../../store";
+import CartActions from "../Cart/CartAction";
 
 export default function DetailViewCategory({ categories }) {
   const [tabIndex, setTabIndex] = useState(0);
+  const cart = useSelector((state) => state.items);
+  const dispatch = useDispatch();
+
+  function handleAddToCart(foodItem) {
+    dispatch(cartActions.addItem(foodItem));
+  }
+
+  function handleRemoveFromCart(title) {
+    dispatch(cartActions.removeItem(title));
+  }
 
   return (
     <section className="p-2">
       <div className="detailpage-container">
-        <h4>Order Online</h4>
+        <h4 className="text-500">Order Online</h4>
         <div className="row2 gap-2 my-2">
           <ul className={`my-2 ${styles.categories}`}>
             {Object.keys(categories).map((title, index) => {
@@ -26,17 +39,22 @@ export default function DetailViewCategory({ categories }) {
             })}
           </ul>
           <div className={styles.items}>
-            <h3>{Object.keys(categories)[tabIndex]}</h3>
+            <h2 className="text-500">{Object.keys(categories)[tabIndex]}</h2>
             <ul>
               {categories[Object.keys(categories)[tabIndex]].map(
                 (foodItem, index) => {
+                  const cartItem = cart.find(
+                    (item) => item.title === foodItem.title
+                  );
+                  const quantity = cartItem ? cartItem.quantity : 0;
+
                   return (
                     <div className={styles.flex} key={`foodItem${index}`}>
                       <div>
                         <img
                           src={foodItem.image}
                           className={styles.item_image}
-                          //   alt={foodItem.title}
+                          // alt={foodItem.title}
                         />
                       </div>
                       <div className={styles.data_item_content}>
@@ -45,24 +63,24 @@ export default function DetailViewCategory({ categories }) {
                           {foodItem.description}
                         </p>
                         <p>{`₹${foodItem.price}`}</p>
-                        {true ? (
+                        {quantity === 0 ? (
                           <button
                             className={`btn-primary ${styles.cart_btn}`}
-                            onClick={() => {}}>
+                            onClick={() => {
+                              handleAddToCart(foodItem);
+                            }}>
                             Add To Cart
                           </button>
                         ) : (
-                          <div className={`${styles.flex} ${styles.center}`}>
-                            <button
-                              className="btn-secondary"
-                              onClick={() => {}}>
-                              -
-                            </button>
-                            <p>{"1"}</p>
-                            <button className="btn-primary" onClick={() => {}}>
-                              +
-                            </button>
-                          </div>
+                          <CartActions
+                            quantity={quantity}
+                            onDecrease={() => {
+                              handleRemoveFromCart(foodItem.title);
+                            }}
+                            onIncrease={() => {
+                              handleAddToCart(foodItem);
+                            }}
+                          />
                         )}
                       </div>
                     </div>

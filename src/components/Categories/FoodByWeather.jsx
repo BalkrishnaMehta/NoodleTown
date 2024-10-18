@@ -1,5 +1,5 @@
-import { foods } from "../utils/data";
-import Card from "./UI/Card";
+import { foods } from "../../utils/data";
+import Card from "../UI/Cards/Card";
 
 export default function FoodByWeather() {
   return (
@@ -11,6 +11,7 @@ export default function FoodByWeather() {
             return (
               <Card
                 primaryText={food.title}
+                primaryFontBold
                 secondaryText={food.time}
                 image={food.image}
                 imgHeightClass={"img_height2"}

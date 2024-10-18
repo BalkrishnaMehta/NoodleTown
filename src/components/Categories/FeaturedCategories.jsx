@@ -1,6 +1,6 @@
 import styles from "./FeaturedCategories.module.css";
-import { featured } from "../utils/data";
-import Card from "./UI/Card";
+import { featured } from "../../utils/data";
+import Card from "../UI/Cards/Card";
 
 export default function FeaturedCategories() {
   return (
@@ -11,6 +11,7 @@ export default function FeaturedCategories() {
             return (
               <Card
                 primaryText={category.title}
+                primaryFontBold
                 secondaryText={category.time}
                 image={category.image}
                 imgHeightClass={"img_height3"}

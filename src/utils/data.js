@@ -259,27 +259,27 @@ export const Drinks = [
 export const brands = [
   {
     title: "La Pino'z Pizza",
-    image: "assets/brands/brand1.png",
+    image: "../assets/brands/brand1.png",
   },
   {
     title: "McDonald's",
-    image: "assets/brands/brand2.png",
+    image: "../assets/brands/brand2.png",
   },
   {
     title: "Starbucks",
-    image: "assets/brands/brand3.png",
+    image: "../assets/brands/brand3.png",
   },
   {
     title: "Burger King",
-    image: "assets/brands/brand4.png",
+    image: "../assets/brands/brand4.png",
   },
   {
     title: "KFC",
-    image: "assets/brands/brand5.png",
+    image: "../assets/brands/brand5.png",
   },
   {
     title: "Coffee Culture",
-    image: "assets/brands/brand6.png",
+    image: "../assets/brands/brand6.png",
   },
 ];
 
@@ -291,8 +291,8 @@ export const brandDetails = [
     shopTiming: [null, [9, 21], [9, 21], [9, 21], [9, 21], [9, 21], null],
     averageOrderValue: 700,
     typicalGroupSize: 2,
-    diningMenuImage: "assets/menus/brand1/DiningMenu.png",
-    takeawayMenuImage: "assets/menus/brand1/TakeawayMenu.png",
+    diningMenuImage: "../assets/menus/brand1/DiningMenu.png",
+    takeawayMenuImage: "../assets/menus/brand1/TakeawayMenu.png",
   },
   {
     title: "McDonald's",
@@ -309,8 +309,8 @@ export const brandDetails = [
     ],
     averageOrderValue: 750,
     typicalGroupSize: 3,
-    diningMenuImage: "assets/menus/brand2/DiningMenu.png",
-    takeawayMenuImage: "assets/menus/brand2/TakeawayMenu.png",
+    diningMenuImage: "../assets/menus/brand2/DiningMenu.png",
+    takeawayMenuImage: "../assets/menus/brand2/TakeawayMenu.png",
   },
   {
     title: "Starbucks",
@@ -327,8 +327,8 @@ export const brandDetails = [
     ],
     averageOrderValue: 500,
     typicalGroupSize: 1,
-    diningMenuImage: "assets/menus/brand3/DiningMenu.png",
-    takeawayMenuImage: "assets/menus/brand3/TakeawayMenu.png",
+    diningMenuImage: "../assets/menus/brand3/DiningMenu.png",
+    takeawayMenuImage: "../assets/menus/brand3/TakeawayMenu.png",
   },
   {
     title: "Burger King",
@@ -345,8 +345,8 @@ export const brandDetails = [
     ],
     averageOrderValue: 600,
     typicalGroupSize: 2,
-    diningMenuImage: "assets/menus/brand4/DiningMenu.png",
-    takeawayMenuImage: "assets/menus/brand4/TakeawayMenu.png",
+    diningMenuImage: "../assets/menus/brand4/DiningMenu.png",
+    takeawayMenuImage: "../assets/menus/brand4/TakeawayMenu.png",
   },
   {
     title: "KFC",
@@ -363,8 +363,8 @@ export const brandDetails = [
     ],
     averageOrderValue: 900,
     typicalGroupSize: 4,
-    diningMenuImage: "assets/menus/brand5/DiningMenu.png",
-    takeawayMenuImage: "assets/menus/brand5/TakeawayMenu.png",
+    diningMenuImage: "../assets/menus/brand5/DiningMenu.png",
+    takeawayMenuImage: "../assets/menus/brand5/TakeawayMenu.png",
   },
   {
     title: "Coffee Culture",
@@ -381,8 +381,8 @@ export const brandDetails = [
     ],
     averageOrderValue: 650,
     typicalGroupSize: 2,
-    diningMenuImage: "assets/menus/brand6/DiningMenu.png",
-    takeawayMenuImage: "assets/menus/brand6/TakeawayMenu.png",
+    diningMenuImage: "../assets/menus/brand6/DiningMenu.png",
+    takeawayMenuImage: "../assets/menus/brand6/TakeawayMenu.png",
   },
 ];
 
@@ -434,38 +434,5 @@ export const featured = [
     image: "assets/featured/category3.jpg",
     title: "Authentic",
     time: "29 Places Near You",
-  },
-];
-
-export const cart = [
-  {
-    title: "Eatalian Pizza",
-    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
-    price: 5000,
-    image: "assets/recipes/Pizza/recipe1.png",
-  },
-  {
-    title: "Sicilian Pizza",
-    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
-    price: 1000,
-    image: "assets/recipes/Pizza/recipe2.png",
-  },
-  {
-    title: "Margarita",
-    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
-    price: 2000,
-    image: "assets/recipes/Pizza/recipe3.png",
-  },
-  {
-    title: "Speedy Pizza",
-    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
-    price: 7000,
-    image: "assets/recipes/Pizza/recipe4.png",
-  },
-  {
-    title: "L’appetitosa",
-    description: "Dough, Mozzarella, Cheddar, Blue, Parmesan",
-    price: 12000,
-    image: "assets/recipes/Pizza/recipe5.png",
   },
 ];

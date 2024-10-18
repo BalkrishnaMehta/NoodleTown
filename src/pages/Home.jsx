@@ -1,15 +1,15 @@
-import Hero from "../components/Hero";
-import Suggestions from "../components/Suggestions";
-import CircularCards from "../components/UI/CircularCards";
+import Hero from "../components/Home/Hero";
+import Suggestions from "../components/Home/Suggestions";
+import CircularCards from "../components/UI/Cards/CircularCards";
 import { cuisines } from "../utils/data";
-import Recipes from "../components/Recipes";
-import Banner from "../components/Banner";
+import Recipes from "../components/Home/Recipes";
+import Banner from "../components/Home/Banner";
 import bannerPizza from "../../src/assets/bannerPizza.png";
 import MasonaryGrid from "../components/UI/MasonaryGrid";
 import burger from "../assets/offers/burger.png";
 import icecream from "../assets/offers/icecream.png";
 import fruits from "../assets/offers/fruits.png";
-import Social from "../components/Social";
+import Social from "../components/Home/Social";
 import Footer from "../components/UI/Footer";
 
 export default function Home() {
@@ -17,17 +17,16 @@ export default function Home() {
     <>
       <Hero />
       <Suggestions />
-      <CircularCards
-        title={"Our best delivered cuisines"}
-        data={cuisines}
-        containerClass="container"
-        headingClass
-        divider
-        description={
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-          eiusmod tempor incididunt ut labore et dolore"
-        }
-      />
+      <section className="p-2">
+        <div className="container">
+          <h2 className="text-primary">Our best delivered cuisines</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            doeiusmod tempor incididunt ut labore et dolore
+          </p>
+          <CircularCards data={cuisines} divider />
+        </div>
+      </section>
       <Recipes />
       <Banner banner={bannerPizza}>
         <h1 className="text-white">

@@ -14,7 +14,7 @@ export default function Search() {
         type="text"
         name="search"
         id="search"
-        placeholder="Search for restraunt, cuisine, place"
+        placeholder="Search for restaurant, cuisine, place"
       />
     </div>
   );

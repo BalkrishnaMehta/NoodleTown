@@ -1,10 +1,10 @@
-import Card from "./UI/Card";
-import { suggestions } from "../utils/data";
+import Card from "../UI/Cards/Card";
+import { suggestions } from "../../utils/data";
 
 export default function Suggestions() {
   return (
-    <section className="p-2">
-      <div className="container row">
+    <section>
+      <div className="container row p-2">
         {suggestions.map((suggestion, index) => {
           return (
             <Card

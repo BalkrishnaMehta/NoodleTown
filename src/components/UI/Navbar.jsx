@@ -1,24 +1,31 @@
+import { useSelector } from "react-redux";
 import styles from "./Navbar.module.css";
 import { ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ textWhite }) {
-  let cartItemCount = 5;
+  const cartItemCount = useSelector((state) => state.items.length);
+  // let cartItemCount = 5;
   return (
     <nav className={styles.nav}>
-      <h4 className="text-primary">Noodletown</h4>
+      <Link to="/">
+        <h4 className="text-primary">Noodletown</h4>
+      </Link>
       <ul>
         <li>
-          <a href="#" className={textWhite ? "text-white" : undefined}>
+          <Link
+            to="/categories"
+            className={textWhite ? "text-white" : undefined}>
             Menu
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/cart"
             className={`${styles.cart} ${textWhite ? "text-white" : ""}`}>
             <span>{cartItemCount}</span>
             <ShoppingCart />
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

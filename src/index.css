@@ -47,6 +47,18 @@ img {
   line-height: 1rem;
 }
 
+.text-400 {
+  font-weight: 400;
+}
+
+.text-500 {
+  font-weight: 500;
+}
+
+.text-600 {
+  font-weight: 600;
+}
+
 .p-2 {
   padding: 2rem;
 }
@@ -102,6 +114,7 @@ img {
 }
 
 .btn-primary {
+  text-align: center;
   padding: 0.5rem 1rem;
   background-color: #ffa500;
   color: #ffffff;
@@ -109,12 +122,14 @@ img {
 }
 
 .btn-secondary {
+  text-align: center;
   padding: 0.5rem 1rem;
   background-color: #f3f3f3;
   border-radius: 0.2rem;
 }
 
 .btn-outline {
+  text-align: center;
   padding: 0.5rem 1rem;
   border: 2px solid #ffa500;
   color: black;
@@ -133,6 +148,11 @@ img {
 .brand-image {
   width: 16rem;
   border-radius: 1rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 500px) {

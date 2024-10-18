@@ -36,7 +36,7 @@
   width: 100%;
 }
 
-.coupon_form input {
+.coupon_grp input {
   width: 70%;
   padding: 0.8rem 1.2rem;
   background-color: #f3f3f3;
@@ -44,22 +44,19 @@
   border-radius: 0.2rem;
 }
 
-.coupon_form input:focus {
+.coupon_grp input:focus {
   outline: none;
   border: 2px solid #ffa500;
 }
 
-.coupon_form button {
+.coupon_grp button {
   margin-left: 0.3rem;
   width: 28%;
   padding: 0.8rem 1.2rem;
 }
 
-.quantity {
-  padding: 2rem 0;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+.totals {
+  margin-top: 2rem;
 }
 
 .amount_row {

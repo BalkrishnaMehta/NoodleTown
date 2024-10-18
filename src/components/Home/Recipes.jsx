@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Recipes.module.css";
-import RecipeCard from "./UI/RecipeCard";
-import Tabs from "./UI/Tabs";
-import { Pizza, Sides, Chicken, Dessert, Drinks } from "../utils/data";
+import RecipeCard from "../UI/Cards/RecipeCard";
+import Tabs from "../UI/Tabs";
+import { Pizza, Sides, Chicken, Dessert, Drinks } from "../../utils/data";
 
 export default function Recipes() {
   const tabs = ["Pizza", "Sides", "Chicken", "Dessert", "Drinks"];

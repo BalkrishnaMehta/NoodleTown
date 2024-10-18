@@ -2,6 +2,7 @@ import styles from "./Card.module.css";
 
 export default function ({
   primaryText,
+  primaryFontBold,
   secondaryText,
   image,
   shadow,
@@ -33,7 +34,9 @@ export default function ({
         className={`${paraPadding ? styles.data : ""} ${
           overlayText ? styles.overlay : ""
         }`}>
-        <h4>{primaryText}</h4>
+        <h4 className={primaryFontBold ? "text-600" : "text-400"}>
+          {primaryText}
+        </h4>
         <p>{secondaryText}</p>
       </div>
     </div>

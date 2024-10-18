@@ -1,5 +1,5 @@
 import styles from "./Hero.module.css";
-import Navbar from "./UI/Navbar";
+import Navbar from "../UI/Navbar";
 import Search from "./Search";
 
 export default function Hero() {

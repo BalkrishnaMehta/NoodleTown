@@ -14,8 +14,9 @@
   width: 100%;
   top: -50px;
   left: 0;
-  background: url("../assets/recipieLeft.png") no-repeat left top;
+  background: url("../../assets/recipieLeft.png") no-repeat left top;
   background-size: 100px 150px;
+  z-index: -1;
 }
 
 .content::before {
@@ -25,8 +26,9 @@
   width: 100%;
   top: -50px;
   right: 0;
-  background: url("../assets/recipieRight.png") no-repeat right top;
+  background: url("../../assets/recipieRight.png") no-repeat right top;
   background-size: 100px 150px;
+  z-index: -1;
 }
 
 .carousal {

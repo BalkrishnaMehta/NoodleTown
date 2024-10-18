@@ -28,10 +28,10 @@
   position: absolute;
   top: 0;
   height: 100%;
-  max-width: 90%;
+  max-width: 75%;
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem;
   font-size: 2rem;
 }
 

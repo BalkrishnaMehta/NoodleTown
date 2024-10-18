@@ -1,8 +1,10 @@
 import styles from "./DetailViewHero.module.css";
-import { timeFormatter } from "../utils/timeFormatter";
+import { timeFormatter } from "../../utils/timeFormatter";
+import { Link } from "react-router-dom";
 
 export default function DetailViewHero({ details, brand, brandLogo }) {
   const date = new Date(Date.now());
+  let linkData = (brand + " " + details.address).split(" ").join("+");
   return (
     <section className="p-2">
       <div className="detailpage-container">
@@ -36,9 +38,24 @@ export default function DetailViewHero({ details, brand, brandLogo }) {
               </div>
             </div>
             <div className={`row ${styles.btns}`}>
-              <button className="btn-primary">Order Now</button>
-              <button className="btn-outline">Directions</button>
-              <button className="btn-outline">Share</button>
+              <Link to="../cart" className="btn-primary">
+                Order Now
+              </Link>
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${linkData}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline">
+                Directions
+              </a>
+
+              <a
+                href={`https://x.com/intent/tweet?text=Check+out+${linkData}!`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline">
+                Share
+              </a>
             </div>
           </div>
         </div>
