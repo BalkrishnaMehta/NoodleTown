@@ -1,9 +1,5 @@
 .content {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4.5rem;
   position: relative;
 }
 
@@ -32,7 +28,6 @@
 }
 
 .carousal {
-  display: flex;
   overflow-x: auto;
   padding-bottom: 2rem;
 }

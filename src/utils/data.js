@@ -1,3 +1,10 @@
+export const cities = [
+  { name: "Ahmedabad", lat: 23.0225, lon: 72.5714 },
+  { name: "Rajkot", lat: 22.3039, lon: 70.8022 },
+  { name: "Surat", lat: 21.1702, lon: 72.8311 },
+  { name: "Valsad", lat: 20.5992, lon: 72.9342 },
+];
+
 export const suggestions = [
   {
     primaryText: "Dining out",

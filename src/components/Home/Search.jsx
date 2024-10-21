@@ -1,13 +1,36 @@
 import styles from "./Search.module.css";
+import { cities } from "../../utils/data";
+import { findNearestPlace } from "../../utils/loc";
+import { useEffect, useState } from "react";
 
 export default function Search() {
+  const [city, setCity] = useState();
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      const nearest_city = findNearestPlace(
+        cities,
+        pos.coords.latitude,
+        pos.coords.longitude
+      );
+      setCity(nearest_city.name);
+    });
+  }, []);
+
+  const handleCity = (e) => {
+    setSelectedCity(e.target.value);
+  };
+
   return (
     <div className={styles.search_bar}>
-      <select name="city" id="cities" defaultValue="Surat">
-        <option value="Ahmedabad">Ahmedabad</option>
-        <option value="Rajkot">Rajkot</option>
-        <option value="Surat">Surat</option>
-        <option value="Valsad">Valsad</option>
+      <select name="city" id="cities" value={city} onChange={handleCity}>
+        {cities.map((city) => {
+          return (
+            <option value={city.name} key={city.name}>
+              {city.name}
+            </option>
+          );
+        })}
       </select>
       <div className={styles.divider}></div>
       <input

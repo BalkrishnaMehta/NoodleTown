@@ -19,8 +19,6 @@
   top: 0;
   left: 0;
   height: 100%;
-  display: flex;
-  align-items: center;
   max-width: 1020px;
   line-height: 5.5rem;
   font-size: 3rem;

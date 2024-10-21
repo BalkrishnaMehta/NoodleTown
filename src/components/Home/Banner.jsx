@@ -4,7 +4,7 @@ export default function Banner({ children, banner }) {
   return (
     <section className={styles.banner}>
       <img src={banner} alt="" />
-      <div className={styles.container}>{children}</div>
+      <div className={`row align-center ${styles.container}`}>{children}</div>
     </section>
   );
 }

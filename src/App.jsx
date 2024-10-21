@@ -1,10 +1,12 @@
-import Cart from "./pages/Cart";
-import Categories from "./pages/Categories";
-import Home from "./pages/Home";
-import BrandDetailView from "./pages/BrandDetailView";
 import { Provider } from "react-redux";
-import store from "./store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Categories from "./pages/Categories";
+import Cart from "./pages/Cart";
+import BrandDetailView from "./pages/BrandDetailView";
+
+import store from "./store";
 
 function App() {
   const router = createBrowserRouter([

@@ -1,15 +1,17 @@
-import styles from "./Hero.module.css";
 import Navbar from "../UI/Navbar";
 import Search from "./Search";
 
+import styles from "./Hero.module.css";
+
 export default function Hero() {
   return (
-    <header className={styles.hero}>
+    <header className={`col ${styles.hero}`}>
       <Navbar textWhite />
-      <div className={styles.hero_content}>
+      <div
+        className={`col align-center justify-evenly text-center ${styles.hero_content}`}>
         <div>
-          <h1>Noodletown</h1>
-          <p>Discover best food around you</p>
+          <h1 className="text-700">Noodletown</h1>
+          <p className="text-500">Discover best food around you</p>
         </div>
         <Search />
       </div>

@@ -30,16 +30,6 @@
   background-color: #ffc300;
 }
 
-.flex {
-  padding-top: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.center {
-  align-items: center;
-}
-
 .item_image {
   height: 8rem;
   width: 8rem;
@@ -52,7 +42,6 @@
 }
 
 .cart_btn {
-  margin-top: 1rem;
   padding: 0.5rem 2rem !important;
 }
 
@@ -64,4 +53,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.price {
+  margin-bottom: 1rem;
 }

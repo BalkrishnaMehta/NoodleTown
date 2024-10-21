@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
-import styles from "./Navbar.module.css";
-import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import { ShoppingCart } from "lucide-react";
+
+import styles from "./Navbar.module.css";
 
 export default function Navbar({ textWhite }) {
   const cartItemCount = useSelector((state) => state.items.length);
-  // let cartItemCount = 5;
   return (
     <nav className={styles.nav}>
       <Link to="/">

@@ -1,29 +1,35 @@
-import styles from "./DetailViewHero.module.css";
-import { timeFormatter } from "../../utils/timeFormatter";
 import { Link } from "react-router-dom";
+
+import { timeFormatter } from "../../utils/timeFormatter";
+
+import styles from "./Hero.module.css";
 
 export default function DetailViewHero({ details, brand, brandLogo }) {
   const date = new Date(Date.now());
+  const currentDay = date.getDay();
   let linkData = (brand + " " + details.address).split(" ").join("+");
   return (
     <section className="p-2">
       <div className="detailpage-container">
-        <div className="row2 gap-2">
+        <div className="row gap-2 sm-col">
           <img src={brandLogo} alt={brand} className={styles.logo} />
           <div>
             <h2>{brand}</h2>
-            <div className={`row ${styles.data}`}>
+            <div className={`row gap-2 sm-col ${styles.data}`}>
               <div>
                 <p>{details.tags.join(", ")}</p>
                 <p>{details.address}</p>
                 <p>
                   <span className={styles.shop_indicator}>
-                    {date.getHours() > details.shopTiming[date.getDay()][0] &&
-                    date.getHours() < details.shopTiming[date.getDay()][1]
-                      ? "Open Now "
-                      : "Closed "}
+                    {details.shopTiming[currentDay]
+                      ? date.getHours() > details.shopTiming[currentDay][0] &&
+                        date.getHours() < details.shopTiming[currentDay][1]
+                        ? "Open Now "
+                        : "Closed "
+                      : "Closed"}
                   </span>
-                  {timeFormatter(details.shopTiming[date.getDay()])}
+                  {details.shopTiming[currentDay] &&
+                    timeFormatter(details.shopTiming[currentDay])}
                   {" (Today)"}
                 </p>
               </div>
@@ -37,7 +43,7 @@ export default function DetailViewHero({ details, brand, brandLogo }) {
                 </p>
               </div>
             </div>
-            <div className={`row ${styles.btns}`}>
+            <div className={`row gap-3 sm-col ${styles.btns}`}>
               <Link to="../cart" className="btn-primary">
                 Order Now
               </Link>

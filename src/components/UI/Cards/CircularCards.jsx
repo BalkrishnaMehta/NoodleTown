@@ -1,15 +1,16 @@
 import { Fragment } from "react";
-import styles from "./CircularCards.module.css";
 import { Link } from "react-router-dom";
+
+import styles from "./CircularCards.module.css";
 
 export default function CircularCards({ data, titleMargin, divider, link }) {
   return (
-    <div className={`row my-2 ${styles.centerText}`}>
+    <div className="my-2 row gap-3 justify-between sm-col align-center text-center">
       {data.map((elem, index) => {
         const content = (
           <div className={styles.circular_card}>
             <img src={elem.image} alt={elem.title} />
-            <p className={titleMargin ? styles.brand_title : undefined}>
+            <p className={`text-600 ${titleMargin ? styles.brand_title : ""}`}>
               {elem.title}
             </p>
           </div>

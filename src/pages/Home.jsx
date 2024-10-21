@@ -1,16 +1,18 @@
 import Hero from "../components/Home/Hero";
 import Suggestions from "../components/Home/Suggestions";
 import CircularCards from "../components/UI/Cards/CircularCards";
-import { cuisines } from "../utils/data";
 import Recipes from "../components/Home/Recipes";
 import Banner from "../components/Home/Banner";
-import bannerPizza from "../../src/assets/bannerPizza.png";
 import MasonaryGrid from "../components/UI/MasonaryGrid";
+import Social from "../components/Home/Social";
+import Footer from "../components/UI/Footer";
+
+import { cuisines } from "../utils/data";
+
+import bannerPizza from "../../src/assets/bannerPizza.png";
 import burger from "../assets/offers/burger.png";
 import icecream from "../assets/offers/icecream.png";
 import fruits from "../assets/offers/fruits.png";
-import Social from "../components/Home/Social";
-import Footer from "../components/UI/Footer";
 
 export default function Home() {
   return (

@@ -4,11 +4,6 @@
   border-radius: 50%;
 }
 
-.data {
-  display: flex;
-  gap: 2rem;
-}
-
 .data div p {
   font-size: 1rem;
   font-weight: 300;

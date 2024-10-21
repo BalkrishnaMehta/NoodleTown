@@ -41,12 +41,6 @@ img {
   color: #ffffff;
 }
 
-.light-text {
-  font-size: 0.6rem;
-  font-weight: 400;
-  line-height: 1rem;
-}
-
 .text-400 {
   font-weight: 400;
 }
@@ -59,8 +53,16 @@ img {
   font-weight: 600;
 }
 
+.text-700 {
+  font-weight: 700;
+}
+
 .p-2 {
   padding: 2rem;
+}
+
+.py-half {
+  padding: 0.5rem 0;
 }
 
 .my-2 {
@@ -87,13 +89,31 @@ img {
 
 .row {
   display: flex;
-  justify-content: space-between;
-  gap: 3rem;
 }
 
-.row2 {
+.col {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .grid {
@@ -109,8 +129,12 @@ img {
   gap: 2rem;
 }
 
-.category-heading {
-  font-weight: 500;
+.gap-3 {
+  gap: 3rem;
+}
+
+.gap-5 {
+  gap: 5rem;
 }
 
 .btn-primary {
@@ -150,14 +174,8 @@ img {
   border-radius: 1rem;
 }
 
-.cart-items {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 @media screen and (max-width: 500px) {
-  .row,
-  .row2 {
+  .sm-col {
     flex-direction: column;
   }
 
@@ -171,6 +189,10 @@ img {
 }
 
 @media screen and (min-width: 501px) and (max-width: 850px) {
+  .md-col {
+    flex-direction: column;
+  }
+
   .offer-section {
     margin: 2rem 0;
   }

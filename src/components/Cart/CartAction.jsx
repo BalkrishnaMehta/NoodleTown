@@ -1,8 +1,6 @@
-import styles from "../BrandDetailView/DetailViewCategory.module.css";
-
 export default function CartActions({ quantity, onDecrease, onIncrease }) {
   return (
-    <div className={`${styles.center} ${styles.flex}`}>
+    <div className="row gap-1 align-center">
       <button className="btn-secondary" onClick={onDecrease}>
         -
       </button>

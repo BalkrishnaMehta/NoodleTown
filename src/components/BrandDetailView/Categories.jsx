@@ -1,8 +1,10 @@
+import CartActions from "../Cart/CartAction";
+
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styles from "./DetailViewCategory.module.css";
 import { cartActions } from "../../store";
-import CartActions from "../Cart/CartAction";
+
+import styles from "./Categories.module.css";
 
 export default function DetailViewCategory({ categories }) {
   const [tabIndex, setTabIndex] = useState(0);
@@ -21,7 +23,7 @@ export default function DetailViewCategory({ categories }) {
     <section className="p-2">
       <div className="detailpage-container">
         <h4 className="text-500">Order Online</h4>
-        <div className="row2 gap-2 my-2">
+        <div className="row gap-2 sm-col my-2">
           <ul className={`my-2 ${styles.categories}`}>
             {Object.keys(categories).map((title, index) => {
               return (
@@ -49,7 +51,7 @@ export default function DetailViewCategory({ categories }) {
                   const quantity = cartItem ? cartItem.quantity : 0;
 
                   return (
-                    <div className={styles.flex} key={`foodItem${index}`}>
+                    <div className="my-2 row gap-1" key={`foodItem${index}`}>
                       <div>
                         <img
                           src={foodItem.image}
@@ -62,7 +64,7 @@ export default function DetailViewCategory({ categories }) {
                         <p className={styles.description}>
                           {foodItem.description}
                         </p>
-                        <p>{`₹${foodItem.price}`}</p>
+                        <p className={styles.price}>{`₹${foodItem.price}`}</p>
                         {quantity === 0 ? (
                           <button
                             className={`btn-primary ${styles.cart_btn}`}

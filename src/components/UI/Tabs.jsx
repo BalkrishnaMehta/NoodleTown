@@ -3,7 +3,7 @@ import styles from "./Tabs.module.css";
 export default function Tabs({ tabs, activeIndex, tabClickHandler }) {
   return (
     <nav className={styles.tabs}>
-      <ul>
+      <ul className="row gap-2">
         {tabs.map((tab, index) => {
           return (
             <li
@@ -11,11 +11,9 @@ export default function Tabs({ tabs, activeIndex, tabClickHandler }) {
               onClick={() => {
                 tabClickHandler(index);
               }}
-              className={
-                activeIndex == index
-                  ? `text-white ${styles.current}`
-                  : undefined
-              }>
+              className={`text-500 ${
+                activeIndex == index ? `text-white ${styles.current}` : ""
+              }`}>
               {tab}
             </li>
           );

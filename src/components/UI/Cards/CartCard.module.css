@@ -34,6 +34,7 @@
 
 .coupon_form {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .coupon_grp input {
@@ -57,12 +58,6 @@
 
 .totals {
   margin-top: 2rem;
-}
-
-.amount_row {
-  padding: 0.5rem 0;
-  display: flex;
-  justify-content: space-between;
 }
 
 .order_btn {

@@ -21,7 +21,7 @@ export default function MasonaryGrid({
           className={rounded ? styles.rounded : ""}
         />
         {overlayText && (
-          <div className={`text-white ${styles.overlay}`}>
+          <div className={`text-white row align-center ${styles.overlay}`}>
             <h2>{overlayText}</h2>
           </div>
         )}

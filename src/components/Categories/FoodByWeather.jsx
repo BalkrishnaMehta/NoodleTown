@@ -1,5 +1,6 @@
-import { foods } from "../../utils/data";
 import Card from "../UI/Cards/Card";
+
+import { foods } from "../../utils/data";
 
 export default function FoodByWeather() {
   return (

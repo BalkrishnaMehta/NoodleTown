@@ -1,8 +1,11 @@
-import { useState } from "react";
-import styles from "./Recipes.module.css";
-import RecipeCard from "../UI/Cards/RecipeCard";
 import Tabs from "../UI/Tabs";
+import RecipeCard from "../UI/Cards/RecipeCard";
+
+import { useState } from "react";
+
 import { Pizza, Sides, Chicken, Dessert, Drinks } from "../../utils/data";
+
+import styles from "./Recipes.module.css";
 
 export default function Recipes() {
   const tabs = ["Pizza", "Sides", "Chicken", "Dessert", "Drinks"];
@@ -22,7 +25,7 @@ export default function Recipes() {
 
   return (
     <section className="my-2 inter-font">
-      <div className={styles.content}>
+      <div className={`col align-center gap-5 ${styles.content}`}>
         <h2>Popular Recipes</h2>
         <Tabs
           tabs={tabs}
@@ -30,7 +33,7 @@ export default function Recipes() {
           tabClickHandler={tabClickHandler}
         />
       </div>
-      <div className={`${styles.carousal} my-2`}>
+      <div className={`${styles.carousal} my-2 row`}>
         <RecipeCard recipes={currentRecipes} />
       </div>
     </section>

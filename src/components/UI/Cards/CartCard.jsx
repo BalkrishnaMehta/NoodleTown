@@ -1,8 +1,10 @@
-import { useDispatch } from "react-redux";
-import styles from "./CartCard.module.css";
-import { cartActions } from "../../../store";
 import CartActions from "../../Cart/CartAction";
+
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../store";
+
+import styles from "./CartCard.module.css";
 
 export default function CartCard({
   title,
@@ -59,9 +61,9 @@ export default function CartCard({
           <input type="text" placeholder="Apply coupon code" name="coupon" />
           <button className="btn-primary">Apply</button>
         </div>
-        {couponMessage && (
-          <p className={styles.secondary_text}>{couponMessage}</p>
-        )}
+        <p className={styles.secondary_text}>
+          {couponMessage ? couponMessage : "\u00A0"}
+        </p>
       </form>
       <CartActions
         quantity={quantity}
@@ -73,12 +75,12 @@ export default function CartCard({
         }}
       />
       <div className={styles.totals}>
-        <div className={styles.amount_row}>
+        <div className="row justify-between py-half">
           <p className={styles.secondary_text}>Subtotal</p>
           <p className="text-primary">{`₹${total}`}</p>
         </div>
         <hr />
-        <div className={styles.amount_row}>
+        <div className="row justify-between py-half">
           <p className={styles.secondary_text}>Total</p>
           <p className="text-primary">{`₹${total * quantity}`}</p>
         </div>
