@@ -18,7 +18,7 @@ export default function Search() {
   }, []);
 
   const handleCity = (e) => {
-    setSelectedCity(e.target.value);
+    setCity(e.target.value);
   };
 
   return (

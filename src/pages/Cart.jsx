@@ -15,7 +15,7 @@ export default function Cart() {
             {cart.map((item, index) => {
               return (
                 <CartCard
-                  key={`cart-item${index}`}
+                  key={item.title}
                   title={item.title}
                   description={item.description}
                   price={item.price}

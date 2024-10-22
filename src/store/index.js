@@ -24,6 +24,14 @@ const cartSlice = createSlice({
         state.items[itemindex].quantity--;
       }
     },
+    removeItemFromCart(state, action) {
+      const itemIndex = state.items.findIndex(
+        (item) => item.title === action.payload
+      );
+      if (itemIndex > -1) {
+        state.items.splice(itemIndex, 1);
+      }
+    },
   },
 });
 

@@ -44,6 +44,12 @@ export default function CartCard({
     }
   }
 
+  function handleOrderNow(itemData) {
+    dispatch(cartActions.removeItemFromCart(itemData.title));
+    alert(`${itemData.title}, Order Placed successfully`);
+    console.log(itemData);
+  }
+
   return (
     <div className={styles.card}>
       <img src={image} alt="" />
@@ -84,7 +90,19 @@ export default function CartCard({
           <p className={styles.secondary_text}>Total</p>
           <p className="text-primary">{`₹${total * quantity}`}</p>
         </div>
-        <button className={`btn-primary ${styles.order_btn}`}>Order Now</button>
+        <button
+          className={`btn-primary ${styles.order_btn}`}
+          onClick={() => {
+            handleOrderNow({
+              title,
+              description,
+              price: total,
+              quantity,
+              image,
+            });
+          }}>
+          Order Now
+        </button>
       </div>
     </div>
   );
