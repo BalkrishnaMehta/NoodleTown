@@ -43,11 +43,12 @@
   background-color: #f3f3f3;
   border: none;
   border-radius: 0.2rem;
+  border: 2px solid transparent;
 }
 
 .coupon_grp input:focus {
   outline: none;
-  border: 2px solid #ffa500;
+  border-color: #ffa500;
 }
 
 .coupon_grp button {

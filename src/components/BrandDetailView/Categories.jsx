@@ -1,4 +1,5 @@
 import CartActions from "../Cart/CartAction";
+import { PrimaryButton } from "../UI/Button";
 
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -66,13 +67,13 @@ export default function DetailViewCategory({ categories }) {
                         </p>
                         <p className={styles.price}>{`₹${foodItem.price}`}</p>
                         {quantity === 0 ? (
-                          <button
-                            className={`btn-primary ${styles.cart_btn}`}
+                          <PrimaryButton
+                            classes={styles.cart_btn}
                             onClick={() => {
                               handleAddToCart(foodItem);
                             }}>
                             Add To Cart
-                          </button>
+                          </PrimaryButton>
                         ) : (
                           <CartActions
                             quantity={quantity}

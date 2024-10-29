@@ -108,6 +108,10 @@ img {
   justify-content: space-between;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .align-center {
   align-items: center;
 }
@@ -138,6 +142,7 @@ img {
 }
 
 .btn-primary {
+  font-size: 1rem;
   text-align: center;
   padding: 0.5rem 1rem;
   background-color: #ffa500;
@@ -146,6 +151,7 @@ img {
 }
 
 .btn-secondary {
+  font-size: 1rem;
   text-align: center;
   padding: 0.5rem 1rem;
   background-color: #f3f3f3;
@@ -153,6 +159,7 @@ img {
 }
 
 .btn-outline {
+  font-size: 1rem;
   text-align: center;
   padding: 0.5rem 1rem;
   border: 2px solid #ffa500;
@@ -172,6 +179,16 @@ img {
 .brand-image {
   width: 16rem;
   border-radius: 1rem;
+}
+
+.empty-cart img {
+  width: 18rem;
+  height: 20rem;
+}
+
+.empty-cart h2 {
+  color: #a50a10;
+  font-weight: 900;
 }
 
 @media screen and (max-width: 500px) {

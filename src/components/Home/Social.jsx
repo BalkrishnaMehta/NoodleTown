@@ -21,7 +21,10 @@ export default function Social() {
         </div>
         <div className={`text-white ${styles.overlay}`}>
           <p>Follow Us On Instagram To See Pictures Taken By Our Customers</p>
-          <a href="https://www.instagram.com/" className={styles.insta_link}>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            className={styles.insta_link}>
             <Instagram size={20} /> &nbsp;: @santorins
           </a>
         </div>

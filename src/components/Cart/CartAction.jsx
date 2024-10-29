@@ -1,13 +1,11 @@
+import { PrimaryButton, SecondaryButton } from "../UI/Button";
+
 export default function CartActions({ quantity, onDecrease, onIncrease }) {
   return (
     <div className="row gap-1 align-center">
-      <button className="btn-secondary" onClick={onDecrease}>
-        -
-      </button>
+      <SecondaryButton onClick={onDecrease}>-</SecondaryButton>
       <p>{quantity}</p>
-      <button className="btn-primary" onClick={onIncrease}>
-        +
-      </button>
+      <PrimaryButton onClick={onIncrease}>+</PrimaryButton>
     </div>
   );
 }

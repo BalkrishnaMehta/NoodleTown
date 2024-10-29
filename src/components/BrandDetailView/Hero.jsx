@@ -1,3 +1,4 @@
+import { OutlineButton, PrimaryButton } from "../UI/Button";
 import { Link } from "react-router-dom";
 
 import { timeFormatter } from "../../utils/timeFormatter";
@@ -44,23 +45,22 @@ export default function DetailViewHero({ details, brand, brandLogo }) {
               </div>
             </div>
             <div className={`row gap-3 sm-col ${styles.btns}`}>
-              <Link to="../cart" className="btn-primary">
-                Order Now
+              <Link to="../cart">
+                <PrimaryButton>Order Now</PrimaryButton>
               </Link>
+
               <a
                 href={`https://www.google.com/maps/dir/?api=1&destination=${linkData}`}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline">
-                Directions
+                rel="noopener noreferrer">
+                <OutlineButton>Directions</OutlineButton>
               </a>
 
               <a
                 href={`https://x.com/intent/tweet?text=Check+out+${linkData}!`}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline">
-                Share
+                rel="noopener noreferrer">
+                <OutlineButton>Share</OutlineButton>
               </a>
             </div>
           </div>
