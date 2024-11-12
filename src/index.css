@@ -87,6 +87,15 @@ img {
   overflow: hidden;
 }
 
+.x-scroll-hidden {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.x-scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 .row {
   display: flex;
 }
