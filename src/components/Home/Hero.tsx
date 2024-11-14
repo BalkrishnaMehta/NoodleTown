@@ -1,5 +1,5 @@
 import Navbar from "../UI/Navbar";
-import Search from "../Home/Search";
+import Search from "../../forms/Search";
 
 import styles from "../../styles/Home/Hero.module.css";
 

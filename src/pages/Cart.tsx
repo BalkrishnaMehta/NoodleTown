@@ -1,8 +1,6 @@
-import CartItem from "../models/CartItem";
-
 import Navbar from "../components/UI/Navbar";
 import { PrimaryButton } from "../components/UI/Button";
-import CartCard from "../components/UI/cards/CartCard";
+import CartCard from "../components/UI/Cards/CartCard";
 
 import { useSelector } from "react-redux";
 
@@ -12,15 +10,11 @@ import { motion } from "framer-motion";
 
 import styles from "../styles/Cart/Cart.module.css";
 import Checkout from "../components/Cart/Checkout";
+import { RootState } from "../store";
 
 export default function Cart() {
-  const cart = useSelector((state: { items: CartItem[] }) => state.items);
+  const cart = useSelector((state: RootState) => state.cart.items);
 
-  function calculateTotal() {
-    return cart.reduce((acc, item) => {
-      return (acc += item.price);
-    }, 0);
-  }
   return (
     <>
       <Navbar />
@@ -42,7 +36,7 @@ export default function Cart() {
                   />
                 ))}
               </div>
-              <Checkout price={calculateTotal()} cart={cart} />
+              <Checkout />
             </div>
           ) : (
             <motion.div
@@ -53,7 +47,7 @@ export default function Cart() {
               className="my-2 col gap-2 justify-center align-center text-center empty-cart">
               <img src={emptyCart} alt="Empty cart" />
               <h2>Fill it with deliciousness</h2>
-              <Link to={"/categories"}>
+              <Link to={"/brands"}>
                 <PrimaryButton>Add Products</PrimaryButton>
               </Link>
             </motion.div>

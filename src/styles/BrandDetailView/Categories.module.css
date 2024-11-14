@@ -37,12 +37,12 @@
   object-fit: cover;
 }
 
-.data_item_content > p {
-  line-height: 1.6rem;
+.item_Card {
+  cursor: pointer;
 }
 
-.cart_btn {
-  padding: 0.5rem 2rem !important;
+.data_item_content > p {
+  line-height: 1.6rem;
 }
 
 .description {

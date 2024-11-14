@@ -121,6 +121,10 @@ img {
   justify-content: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .align-center {
   align-items: center;
 }
@@ -188,6 +192,10 @@ img {
 .brand-image {
   width: 16rem;
   border-radius: 1rem;
+}
+
+.add-to-cart-btn {
+  padding: 0.5rem 2rem !important;
 }
 
 .empty-cart img {

@@ -12,6 +12,7 @@ interface CardProps {
   overlayText?: boolean;
   flexBasis?: boolean;
   borderRadius?: string;
+  animate?: boolean;
 }
 
 const Card = ({
@@ -25,6 +26,7 @@ const Card = ({
   overlayText,
   flexBasis,
   borderRadius,
+  animate,
 }: CardProps) => {
   let radiusClass = "";
 
@@ -36,8 +38,8 @@ const Card = ({
 
   return (
     <motion.div
-      // whileHover={{ scale: 1.1 }}
-      // whileTap={{ scale: 1.05 }}
+      whileHover={animate ? { scale: 1.1 } : { scale: 1 }}
+      whileTap={animate ? { scale: 1.05 } : { scale: 1 }}
       className={`${styles.card} ${shadow ? styles.shadow : ""} ${
         flexBasis ? styles.flex_basis : ""
       }`}

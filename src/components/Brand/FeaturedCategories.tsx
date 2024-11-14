@@ -1,5 +1,5 @@
 import { featured } from "../../utils/data";
-import Card from "../UI/cards/Card";
+import Card from "../UI/Cards/Card";
 
 export default function FeaturedCategories() {
   return (

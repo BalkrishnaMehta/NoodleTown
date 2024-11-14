@@ -1,6 +1,6 @@
 import Recipe from "../../models/Recipe";
 import Tabs from "../UI/Tabs";
-import RecipeCard from "../UI/cards/RecipeCard";
+import RecipeCard from "../UI/Cards/RecipeCard";
 import { useState } from "react";
 import { Pizza, Sides, Chicken, Dessert, Drinks } from "../../utils/data";
 import { motion, AnimatePresence } from "framer-motion";

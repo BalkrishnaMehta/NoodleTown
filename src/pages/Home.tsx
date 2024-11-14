@@ -1,6 +1,6 @@
 import Hero from "../components/Home/Hero";
 import Suggestions from "../components/Home/Suggestions";
-import CircularCards from "../components/UI/cards/CircularCards";
+import CircularCards from "../components/UI/Cards/CircularCards";
 import Recipes from "../components/Home/Recipes";
 import Banner from "../components/Home/Banner";
 import MasonaryGrid from "../components/UI/ImageGridGallery";

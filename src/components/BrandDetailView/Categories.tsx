@@ -1,32 +1,18 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { cartActions } from "../../store";
 
-import CartActions from "../Cart/CartAction";
-import { PrimaryButton } from "../UI/Button";
-
-import styles from "./Categories.module.css";
+import styles from "../../styles/BrandDetailView/Categories.module.css";
 import Product from "../../models/Product";
-import CartItem from "../../models/CartItem";
-import { AnimatePresence, motion } from "framer-motion";
+import { Menu } from "../../utils/Menu";
+import { useNavigate, useParams } from "react-router-dom";
+import Categories from "../../models/Categories";
+import ProductCartActions from "./ProductCartActions";
 
-interface Categories {
-  [key: string]: Product[] | undefined;
-}
-
-const DetailViewCategory = ({ categories }: { categories: Categories }) => {
+const DetailViewCategory = () => {
+  const { brand } = useParams();
+  const navigate = useNavigate();
   const [tabIndex, setTabIndex] = useState(0);
-  const cart = useSelector((state: { items: CartItem[] }) => state.items);
-  const dispatch = useDispatch();
-  const currentCategory = categories[Object.keys(categories)[tabIndex]] || [];
-
-  function handleAddToCart(foodItem: Product) {
-    dispatch(cartActions.addItem(foodItem));
-  }
-
-  function handleRemoveFromCart(title: string) {
-    dispatch(cartActions.removeItem(title));
-  }
+  let { categories }: { categories: Categories } = Menu[parseInt(brand!)];
+  let currentCategory = categories[Object.keys(categories)[tabIndex]] || [];
 
   return (
     <section className="p-2">
@@ -54,13 +40,15 @@ const DetailViewCategory = ({ categories }: { categories: Categories }) => {
             <h2 className="text-500">{Object.keys(categories)[tabIndex]}</h2>
             <ul>
               {currentCategory.map((foodItem: Product, index: number) => {
-                const cartItem = cart.find(
-                  (item) => item.title === foodItem.title
-                );
-                const quantity = cartItem ? cartItem.quantity : 0;
-
                 return (
-                  <div className="my-2 row gap-1" key={`foodItem${index}`}>
+                  <div
+                    className={`my-2 row gap-1 ${styles.item_Card}`}
+                    key={`foodItem${index}`}
+                    onClick={() =>
+                      navigate(
+                        `/brands/${brand}/categories/${tabIndex}/products/${index}`
+                      )
+                    }>
                     <div>
                       <img
                         src={foodItem.image}
@@ -74,37 +62,11 @@ const DetailViewCategory = ({ categories }: { categories: Categories }) => {
                         {foodItem.description}
                       </p>
                       <p className={styles.price}>{`₹${foodItem.price}`}</p>
-                      <AnimatePresence mode="wait">
-                        {quantity === 0 ? (
-                          <motion.div
-                            key="add-to-cart"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}>
-                            <PrimaryButton
-                              classes={styles.cart_btn}
-                              onClick={() => handleAddToCart(foodItem)}>
-                              Add To Cart
-                            </PrimaryButton>
-                          </motion.div>
-                        ) : (
-                          <motion.div
-                            key="cart-actions"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}>
-                            <CartActions
-                              quantity={quantity}
-                              onDecrease={() =>
-                                handleRemoveFromCart(foodItem.title)
-                              }
-                              onIncrease={() => handleAddToCart(foodItem)}
-                            />
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <div
+                        className={styles.productActions}
+                        onClick={(e) => e.stopPropagation()}>
+                        <ProductCartActions product={foodItem} />
+                      </div>
                     </div>
                   </div>
                 );

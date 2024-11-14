@@ -1,5 +1,5 @@
 import { foods } from "../../utils/data";
-import Card from "../UI/cards/Card";
+import Card from "../UI/Cards/Card";
 
 export default function FoodByWeather() {
   return (
@@ -17,6 +17,7 @@ export default function FoodByWeather() {
                 imgHeightClass={"img_height2"}
                 borderRadius={"all"}
                 key={`food${index}`}
+                animate
               />
             );
           })}

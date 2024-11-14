@@ -1,13 +1,13 @@
 import CartActions from "../../Cart/CartAction";
 
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../../store";
 
 import styles from "../../../styles/UI/cards/CartCard.module.css";
 
 import CartItem from "../../../models/CartItem";
 import Product from "../../../models/Product";
 import { motion } from "framer-motion";
+import { cartActions } from "../../../store/cart/cartSlice";
 
 const CartCard = ({ title, description, image, price, quantity }: CartItem) => {
   const dispatch = useDispatch();

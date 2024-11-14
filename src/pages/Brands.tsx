@@ -1,11 +1,11 @@
 import Navbar from "../components/UI/Navbar";
-import CircularCards from "../components/UI/cards/CircularCards";
-import FoodByWeather from "../components/Categories/FoodByWeather";
-import FeaturedCategories from "../components/Categories/FeaturedCategories";
+import CircularCards from "../components/UI/Cards/CircularCards";
+import FoodByWeather from "../components/Brand/FoodByWeather";
+import FeaturedCategories from "../components/Brand/FeaturedCategories";
 
 import { brands } from "../utils/data";
 
-const Categories = () => {
+const Brands = () => {
   return (
     <>
       <Navbar />
@@ -15,7 +15,7 @@ const Categories = () => {
           <CircularCards
             titleMargin
             data={brands}
-            link={"/categories/"}
+            link={"/brands/"}
             type={"brand"}
           />
         </div>
@@ -26,4 +26,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Brands;

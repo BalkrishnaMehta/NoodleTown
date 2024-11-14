@@ -1,15 +1,14 @@
-import CartItem from "../../models/CartItem";
-
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { ShoppingCart } from "lucide-react";
 
 import styles from "../../styles/UI/Navbar.module.css";
+import { RootState } from "../../store";
 
 const Navbar = ({ textWhite }: { textWhite?: boolean }) => {
   const cartItemCount = useSelector(
-    (state: { items: CartItem[] }) => state.items.length
+    (state: RootState) => state.cart.items.length
   );
   return (
     <nav className={styles.nav}>
@@ -18,9 +17,7 @@ const Navbar = ({ textWhite }: { textWhite?: boolean }) => {
       </Link>
       <ul>
         <li>
-          <Link
-            to="/categories"
-            className={textWhite ? "text-white" : undefined}>
+          <Link to="/brands" className={textWhite ? "text-white" : undefined}>
             Menu
           </Link>
         </li>

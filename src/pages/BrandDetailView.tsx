@@ -10,8 +10,8 @@ import { brands, brandDetails } from "../utils/data";
 import { Menu } from "../utils/Menu";
 
 const BrandDetailView = () => {
-  const params = useParams<{ index: string }>();
-  const brand = brands[+params.index!];
+  const params = useParams();
+  const brand = brands[+params.brand!];
 
   const { title, image } = brand;
 
@@ -37,9 +37,7 @@ const BrandDetailView = () => {
           takeawayMenuImage={details.takeawayMenuImage}
         />
       )}
-      {menu && menu.categories && Object.keys(menu.categories).length > 0 && (
-        <DetailViewCategory categories={menu.categories} />
-      )}
+      {menu && <DetailViewCategory />}
     </>
   );
 };

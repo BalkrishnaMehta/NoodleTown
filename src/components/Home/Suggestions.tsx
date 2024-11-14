@@ -1,5 +1,5 @@
 import Suggestion from "../../models/Suggestion";
-import Card from "../UI/cards/Card";
+import Card from "../UI/Cards/Card";
 
 const Suggestions = ({ suggestions }: { suggestions: Suggestion[] }) => {
   return (
@@ -16,6 +16,7 @@ const Suggestions = ({ suggestions }: { suggestions: Suggestion[] }) => {
               paraPadding
               imgHeightClass={"img_height1"}
               borderRadius={"top"}
+              animate
             />
           );
         })}
