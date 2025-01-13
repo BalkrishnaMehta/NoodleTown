@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import Skeleton from "react-loading-skeleton";
 import styles from "../../styles/UI/Tabs.module.css";
 
 interface TabsProps {
@@ -26,8 +26,22 @@ const Tabs = ({ tabs, activeIndex, tabClickHandler }: TabsProps) => {
               color: activeIndex === index ? "#ffffff" : "#000000",
             }}
             transition={{ type: "tween", duration: 0.3 }}>
-            {tab}
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
           </motion.li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+Tabs.Skeleton = () => {
+  return (
+    <nav className={styles.tabs}>
+      <ul className="row gap-2">
+        {[1, 2, 3, 4, 5].map((_, index) => (
+          <li key={index} className={styles.skeletonTab}>
+            <Skeleton height="100%" width="100%" borderRadius="2rem" />
+          </li>
         ))}
       </ul>
     </nav>

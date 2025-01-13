@@ -1,10 +1,11 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import styles from "../../../styles/UI/cards/CircularCards.module.css";
+import Restaurant from "../../../models/Restaurant";
 
 interface CircularCardsProps {
-  data: { title: string; image: string }[];
+  data: Pick<Restaurant, "id" | "title" | "logo">[];
   titleMargin?: boolean;
   divider?: boolean;
   link?: string;
@@ -15,9 +16,9 @@ const CircularCards = ({
   data,
   titleMargin,
   divider,
-  link,
   type,
 }: CircularCardsProps) => {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial="hidden"
@@ -33,6 +34,15 @@ const CircularCards = ({
       {data.map((elem, index) => {
         const content = (
           <motion.div
+            onClick={() => {
+              if (type === "brand") {
+                navigate(`/brands/${elem.id}`);
+              } else {
+                navigate(
+                  `restaurants?cuisine=${elem.title.split(" ").join("-")}`
+                );
+              }
+            }}
             key={`card-${index}`}
             variants={{
               hidden: { opacity: 0, scale: 0.5 },
@@ -40,7 +50,7 @@ const CircularCards = ({
             }}
             transition={{ type: "spring", stiffness: 100 }}
             className={styles.circular_card}>
-            <img src={elem.image} alt={elem.title} />
+            <img src={elem.logo} alt={elem.title} />
             <p className={`text-600 ${titleMargin ? styles.brand_title : ""}`}>
               {elem.title}
             </p>
@@ -48,8 +58,8 @@ const CircularCards = ({
         );
 
         return (
-          <Fragment key={`data${index}`}>
-            {link ? <Link to={`${link}${index}`}>{content}</Link> : content}
+          <Fragment key={`data${index + 1}`}>
+            {content}
             {divider && data.length !== index + 1 && (
               <div className={styles.divider}></div>
             )}

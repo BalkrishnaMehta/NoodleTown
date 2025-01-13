@@ -29,12 +29,21 @@ button {
   cursor: pointer;
 }
 
-img {
+img,
+.w-100 {
   width: 100%;
+}
+
+.h-100 {
+  height: 100vh;
 }
 
 .text-primary {
   color: var(--var-primary-color);
+}
+
+.text-secondary {
+  color: #848484;
 }
 
 .text-white {
@@ -57,6 +66,10 @@ img {
   font-weight: 700;
 }
 
+.p-1 {
+  padding: 1rem;
+}
+
 .p-2 {
   padding: 2rem;
 }
@@ -67,6 +80,10 @@ img {
 
 .my-2 {
   margin: 2rem 0;
+}
+
+.px-4 {
+  padding: 0 4rem;
 }
 
 .container {
@@ -129,6 +146,10 @@ img {
   align-items: center;
 }
 
+.align-end {
+  align-items: flex-end;
+}
+
 .text-center {
   text-align: center;
 }
@@ -136,6 +157,10 @@ img {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gap-half {
+  gap: 0.5rem;
 }
 
 .gap-1 {
@@ -163,12 +188,22 @@ img {
   border-radius: 0.2rem;
 }
 
+.btn-primary:disabled {
+  cursor: not-allowed;
+  background-color: #df940a85;
+}
+
 .btn-secondary {
   font-size: 1rem;
   text-align: center;
   padding: 0.5rem 1rem;
-  background-color: #f3f3f3;
+  background-color: #eeeeee;
   border-radius: 0.2rem;
+}
+
+.btn-secondary:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .btn-outline {
@@ -208,6 +243,11 @@ img {
   font-weight: 900;
 }
 
+.secondary-text {
+  color: #666;
+  font-size: 0.8rem;
+}
+
 @media screen and (max-width: 500px) {
   .sm-col {
     flex-direction: column;
@@ -219,6 +259,10 @@ img {
 
   .offer-section {
     margin: 4rem 0;
+  }
+
+  .px-4 {
+    padding: 0 2rem;
   }
 }
 

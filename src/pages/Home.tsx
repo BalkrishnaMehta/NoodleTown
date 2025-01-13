@@ -1,5 +1,5 @@
 import Hero from "../components/Home/Hero";
-import Suggestions from "../components/Home/Suggestions";
+import Services from "../components/Home/Services";
 import CircularCards from "../components/UI/Cards/CircularCards";
 import Recipes from "../components/Home/Recipes";
 import Banner from "../components/Home/Banner";
@@ -7,7 +7,7 @@ import MasonaryGrid from "../components/UI/ImageGridGallery";
 import Social from "../components/Home/Social";
 
 import { bannerPizza, burger, fruits, icecream } from "../assets";
-import { cuisines, suggestions } from "../utils/data";
+import { cuisines, serviceTypes } from "../utils/data";
 
 import Footer from "../components/UI/Footer";
 import { motion } from "framer-motion";
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Suggestions suggestions={suggestions} />
+      <Services serviceTypes={serviceTypes} />
       <motion.section className="p-2">
         <div className="container">
           <h2 className="text-primary">Our best delivered cuisines</h2>
@@ -24,7 +24,7 @@ const Home = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
             doeiusmod tempor incididunt ut labore et dolore
           </p>
-          <CircularCards data={cuisines} divider />
+          <CircularCards data={cuisines} divider link="/restaurants?cusine=" />
         </div>
       </motion.section>
       <Recipes />

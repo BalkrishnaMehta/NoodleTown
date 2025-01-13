@@ -1,5 +1,5 @@
 import Navbar from "../UI/Navbar";
-import Search from "../../forms/Search";
+import Search from "../forms/Search";
 
 import styles from "../../styles/Home/Hero.module.css";
 
@@ -10,8 +10,10 @@ const Hero = () => {
       <div
         className={`col align-center justify-evenly text-center ${styles.hero_content}`}>
         <div>
-          <h1 className="text-700">Noodletown</h1>
-          <p className="text-500">Discover best food around you</p>
+          <h1 className={`text-700 ${styles.hero_heading}`}>Noodletown</h1>
+          <p className={`text-500 ${styles.hero_para}`}>
+            Discover best food around you
+          </p>
         </div>
         <Search />
       </div>

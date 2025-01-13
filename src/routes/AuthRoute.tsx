@@ -1,13 +1,15 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
-const AuthRoute = () => {
-  const isAuthenticated = useSelector(
-    (state: RootState) => state.auth.isAuthenticated
-  );
+export function AuthRoute() {
+  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  return isAuthenticated ? <Navigate to="/" replace /> : <Outlet />;
-};
+  if (accessToken) {
+    return <Navigate to={from} replace />;
+  }
 
-export default AuthRoute;
+  return <Outlet />;
+}

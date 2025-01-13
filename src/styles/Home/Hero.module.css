@@ -26,12 +26,12 @@
   flex: auto;
 }
 
-.hero_content h1 {
+.hero_heading {
   text-transform: uppercase;
   font-size: 2.5rem;
 }
 
-.hero_content p {
+.hero_para {
   font-size: 1.5rem;
 }
 
@@ -40,11 +40,11 @@
     height: 100vh;
   }
 
-  .hero_content h1 {
+  .hero_heading {
     font-size: 2rem;
   }
 
-  .hero_content p {
+  .hero_para {
     font-size: 1rem;
   }
 }

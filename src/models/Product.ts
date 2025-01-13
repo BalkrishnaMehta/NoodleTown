@@ -1,6 +1,9 @@
 export default interface Product {
-  image: string;
+  id: string;
   title: string;
   description: string;
   price: number;
+  imageUrl: string;
+  seasonalTag: string;
+  isVeg: boolean;
 }

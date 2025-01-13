@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "../../styles/UI/ImageGridGallery.module.css";
+import Skeleton from "react-loading-skeleton";
 
 interface ImageGridGalleryProps {
   primaryImage: string;
@@ -77,6 +78,24 @@ const ImageGridGallery = ({
         />
       </motion.div>
     </motion.div>
+  );
+};
+
+ImageGridGallery.Skeleton = () => {
+  return (
+    <div className={`${styles.grid} ${styles.grid_item_height}`}>
+      <div className={styles.main}>
+        <Skeleton height="100%" />
+      </div>
+
+      <div>
+        <Skeleton height="100%" />
+      </div>
+
+      <div>
+        <Skeleton height="100%" />
+      </div>
+    </div>
   );
 };
 

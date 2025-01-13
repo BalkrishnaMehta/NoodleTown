@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { featured } from "../../utils/data";
 import Card from "../UI/Cards/Card";
 
 export default function FeaturedCategories() {
+  const navigate = useNavigate();
   return (
     <section>
       <div className="category-container p-2">
@@ -9,9 +11,14 @@ export default function FeaturedCategories() {
           {featured.map((category, index) => {
             return (
               <Card
+                onClick={() => {
+                  navigate(
+                    `/categories/${category.title.split(" ").join("-")}`
+                  );
+                }}
                 primaryText={category.title}
                 primaryFontBold
-                secondaryText={category.time}
+                secondaryText={category.description}
                 image={category.image}
                 imgHeightClass={"img_height3"}
                 overlayText

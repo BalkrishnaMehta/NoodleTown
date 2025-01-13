@@ -13,6 +13,13 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.skeletonTab {
+  padding: 0 !important;
+  width: 150px;
+  height: 48px;
+  background: transparent !important;
+}
+
 .current {
   background-color: var(--var-primary-color) !important;
 }
@@ -29,6 +36,11 @@
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+
+  .skeletonTab {
+    width: 100px;
+    height: 32px;
+  }
 }
 
 @media screen and (min-width: 501px) and (max-width: 850px) {
@@ -40,5 +52,10 @@
   .tabs ul li {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .skeletonTab {
+    width: 120px;
+    height: 32px;
   }
 }

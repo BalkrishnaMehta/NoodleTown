@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/Forms/Authentication.module.css";
-import Login from "../forms/Login";
-import SignUp from "../forms/SignUp";
+import Login from "../components/forms/Login";
+import SignUp from "../components/forms/SignUp";
 import { motion, AnimatePresence } from "framer-motion";
 import { OutlineButton } from "../components/UI/Button";
 

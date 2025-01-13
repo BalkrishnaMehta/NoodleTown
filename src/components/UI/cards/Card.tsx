@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "../../../styles/UI/cards/Card.module.css";
+import Image from "../Image";
 
 interface CardProps {
   primaryText: string;
@@ -13,6 +14,7 @@ interface CardProps {
   flexBasis?: boolean;
   borderRadius?: string;
   animate?: boolean;
+  onClick?: () => void;
 }
 
 const Card = ({
@@ -27,6 +29,7 @@ const Card = ({
   flexBasis,
   borderRadius,
   animate,
+  onClick,
 }: CardProps) => {
   let radiusClass = "";
 
@@ -43,11 +46,11 @@ const Card = ({
       className={`${styles.card} ${shadow ? styles.shadow : ""} ${
         flexBasis ? styles.flex_basis : ""
       }`}
-      onClick={() => {}}>
-      <img
-        src={image}
+      onClick={onClick}>
+      <Image
+        src={image || ""}
         alt={primaryText}
-        className={`${styles[radiusClass]} ${styles[imgHeightClass]}`}
+        classes={`${styles[radiusClass]} ${styles[imgHeightClass]}`}
       />
       <div
         className={`${paraPadding ? styles.data : ""} ${

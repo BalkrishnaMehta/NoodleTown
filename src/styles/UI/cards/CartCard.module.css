@@ -7,10 +7,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 22rem;
 }
 
-.card img {
-  background-color: black;
+.card_img {
   height: 10rem;
   width: 100%;
   object-fit: cover;
@@ -21,16 +21,19 @@
   padding: 1rem 0;
 }
 
-.data h4 {
+.heading {
   margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: 400;
 }
 
-.secondary_text {
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #848484;
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 500px) {

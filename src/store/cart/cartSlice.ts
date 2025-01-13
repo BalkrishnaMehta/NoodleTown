@@ -2,41 +2,55 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import CartItem from "../../models/CartItem";
 import Product from "../../models/Product";
 
-const initialState: { items: CartItem[] } = { items: [] };
+interface CartState {
+  items: CartItem[];
+}
+
+const initialState: CartState = {
+  items: [],
+};
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem(state, action: PayloadAction<Product>) {
-      const itemIndex = state.items.findIndex(
-        (item) => item.title === action.payload.title
-      );
-      if (itemIndex > -1) {
-        state.items[itemIndex].quantity++;
-      } else {
-        state.items.push({ ...action.payload, quantity: 1 });
-      }
+    setCart: (state, action: PayloadAction<CartItem[]>) => {
+      state.items = action.payload;
     },
-    removeItem(state, action: PayloadAction<string>) {
+    setCartForUnauthenticated: (state, action: PayloadAction<CartItem[]>) => {
+      state.items = action.payload;
+      localStorage.setItem("cartItems", JSON.stringify(action.payload));
+    },
+    updateCartItem: (
+      state,
+      action: PayloadAction<{
+        product: Product;
+        quantity: number;
+        operation: "add" | "remove";
+      }>
+    ) => {
+      const { product, quantity, operation } = action.payload;
       const itemIndex = state.items.findIndex(
-        (item) => item.title === action.payload
+        (item) => item.product.id === product.id
       );
-      if (itemIndex > -1) {
-        if (state.items[itemIndex].quantity === 1) {
-          state.items.splice(itemIndex, 1);
+
+      if (operation === "add") {
+        if (itemIndex > -1) {
+          state.items[itemIndex].quantity += quantity;
         } else {
-          state.items[itemIndex].quantity--;
+          state.items.push({ product, quantity });
+        }
+      } else {
+        if (itemIndex > -1) {
+          state.items[itemIndex].quantity -= quantity;
+          if (state.items[itemIndex].quantity <= 0) {
+            state.items.splice(itemIndex, 1);
+          }
         }
       }
     },
-    removeItemFromCart(state, action: PayloadAction<string>) {
-      const itemIndex = state.items.findIndex(
-        (item) => item.title === action.payload
-      );
-      if (itemIndex > -1) {
-        state.items.splice(itemIndex, 1);
-      }
+    clearCart: (state) => {
+      state.items = [];
     },
   },
 });

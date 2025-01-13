@@ -2,41 +2,45 @@ import Navbar from "../components/UI/Navbar";
 import { PrimaryButton } from "../components/UI/Button";
 import CartCard from "../components/UI/Cards/CartCard";
 
-import { useSelector } from "react-redux";
-
 import { emptyCart } from "../assets";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import styles from "../styles/Cart/Cart.module.css";
+import styles from "../styles/pages/Cart.module.css";
 import Checkout from "../components/Cart/Checkout";
+import CartItem from "../models/CartItem";
+import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
 export default function Cart() {
   const cart = useSelector((state: RootState) => state.cart.items);
+  const isLoading = false;
 
   return (
     <>
       <Navbar />
-      <section className="p-2">
-        <div className="category-container">
-          <h2 className="text-500">Your Cart</h2>
-
-          {cart.length !== 0 ? (
+      <section>
+        <h2 className="text-500 px-4">Your Cart</h2>
+        <div className="category-container p-2">
+          {isLoading ? (
             <div className={styles.cart_layout}>
               <div className={`my-2 row wrap gap-2 ${styles.cart}`}>
-                {cart.map((item) => (
-                  <CartCard
-                    key={item.title}
-                    title={item.title}
-                    description={item.description}
-                    price={item.price}
-                    image={item.image}
-                    quantity={item.quantity}
-                  />
+                {Array(6)
+                  .fill(0)
+                  .map((_, index) => (
+                    <CartCard.Skeleton key={index} />
+                  ))}
+              </div>
+              <Checkout cart={[]} />
+            </div>
+          ) : cart && cart.length !== 0 ? (
+            <div className={styles.cart_layout}>
+              <div className={`my-2 row wrap gap-2 ${styles.cart}`}>
+                {cart.map((item: CartItem) => (
+                  <CartCard key={item.product.title} product={item.product} />
                 ))}
               </div>
-              <Checkout />
+              <Checkout cart={cart} />
             </div>
           ) : (
             <motion.div
