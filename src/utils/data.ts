@@ -25,14 +25,17 @@ export const serviceTypes = [
 
 export const cuisines = [
   {
+    id: "1",
     title: "Chicken",
     logo: "assets/cuisines/cuisine1.png",
   },
   {
+    id: "2",
     title: "Fast Food",
     logo: "assets/cuisines/cuisine2.png",
   },
   {
+    id: "3",
     title: "Beverages",
     logo: "assets/cuisines/cuisine3.png",
   },

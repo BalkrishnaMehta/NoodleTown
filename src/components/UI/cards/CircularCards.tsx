@@ -39,7 +39,7 @@ const CircularCards = ({
                 navigate(`/brands/${elem.id}`);
               } else {
                 navigate(
-                  `restaurants?cuisine=${elem.title.split(" ").join("-")}`
+                  `restaurants?cuisine=${elem.title.split(" ").join("_")}`
                 );
               }
             }}

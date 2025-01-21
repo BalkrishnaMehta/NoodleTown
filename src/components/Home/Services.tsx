@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Card from "../UI/Cards/Card";
-import ServiceType from "../../models/serviceType";
+import ServiceType from "../../models/ServiceType";
+import Card from "../UI/cards/Card";
 
 const Services = ({ serviceTypes }: { serviceTypes: ServiceType[] }) => {
   const navigate = useNavigate();
@@ -14,7 +14,8 @@ const Services = ({ serviceTypes }: { serviceTypes: ServiceType[] }) => {
                 navigate(
                   `/restaurants?service-type=${serviceType.primaryText
                     .split(" ")
-                    .join("-")}`
+                    .join("_")
+                    .toUpperCase()}`
                 );
               }}
               key={`serviceType${index}`}

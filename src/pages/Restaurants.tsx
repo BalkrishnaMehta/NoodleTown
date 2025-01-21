@@ -10,13 +10,10 @@ import { useEffect } from "react";
 
 export default function Restaurants() {
   const location = useLocation();
-  const serviceType = new URLSearchParams(location.search)
-    .get("service-type")
-    ?.split("-")
-    .join(" ");
+  const serviceType = new URLSearchParams(location.search).get("service-type");
   const cuisine = new URLSearchParams(location.search)
     .get("cuisine")
-    ?.split("-")
+    ?.split("_")
     .join(" ");
 
   let type = "";
@@ -77,7 +74,13 @@ export default function Restaurants() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         className="text-500 px-4">
-        {` ${value.split("-").join(" ")} Restaurants`}
+        {` ${value
+          .split("_")
+          .map((v) => {
+            const s = v.toLowerCase();
+            return s[0].toUpperCase() + s.slice(1);
+          })
+          .join(" ")} Restaurants`}
       </motion.h2>
       <div className="category-container p-2">
         {isLoading ? (
@@ -163,7 +166,7 @@ export default function Restaurants() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className={styles.noRestaurantsMessage}>
-            {`No restaurants found for ${value} ${type.split("-").join(" ")}.`}
+            {`No restaurants found for ${value} ${type.split("_").join(" ")}.`}
           </motion.div>
         )}
       </div>
