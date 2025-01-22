@@ -1,5 +1,5 @@
 import Navbar from "../components/UI/Navbar";
-import CircularCards from "../components/UI/Cards/CircularCards";
+import CircularCards from "../components/UI/cards/CircularCards";
 import SeasonalProducts from "../components/Brand/SeasonalProducts";
 import FeaturedCategories from "../components/Brand/FeaturedCategories";
 import { useRestaurant } from "../api/restaurantsApi";

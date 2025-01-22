@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import styles from "../../../styles/UI/Cards/CartCard.module.css";
+import styles from "../../../styles/UI/cards/CartCard.module.css";
 import Skeleton from "react-loading-skeleton";
 import QuantityControl from "../../Cart/QuantityControl";
 import Image from "../Image";

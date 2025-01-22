@@ -1,6 +1,6 @@
 import Navbar from "../components/UI/Navbar";
 import { PrimaryButton } from "../components/UI/Button";
-import CartCard from "../components/UI/Cards/CartCard";
+import CartCard from "../components/UI/cards/CartCard";
 
 import { emptyCart } from "../assets";
 import { Link } from "react-router-dom";

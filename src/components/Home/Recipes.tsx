@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Product from "../../models/Product";
 
 import Tabs from "../UI/Tabs";
-import RecipeCard from "../UI/Cards/RecipeCard";
+import RecipeCard from "../UI/cards/RecipeCard";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { usePopularRecipies } from "../../api/productsApi";

@@ -1,4 +1,4 @@
-import Card from "../UI/Cards/Card";
+import Card from "../UI/cards/Card";
 import Product from "../../models/Product";
 import { useNavigate } from "react-router-dom";
 import { useSeasonalProducts } from "../../api/productsApi";

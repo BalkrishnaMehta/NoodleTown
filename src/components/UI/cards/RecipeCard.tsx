@@ -1,15 +1,13 @@
 import { Check, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 import Skeleton from "react-loading-skeleton";
-import { toast } from "react-toastify";
 import styles from "../../../styles/UI/cards/RecipeCard.module.css";
 import Product from "../../../models/Product";
 import Image from "../Image";
 import { useNavigate } from "react-router-dom";
-import { useCart, useUpdateCart } from "../../../api/cartApi";
+import { useUpdateCart } from "../../../api/cartApi";
 import CartItem from "../../../models/CartItem";
-import { useEffect, useState } from "react";
-import errorToasting from "../../../utils/errorToasting";
+import { useState } from "react";
 import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
 

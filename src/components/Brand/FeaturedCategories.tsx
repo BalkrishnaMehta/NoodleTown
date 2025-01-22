@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { featured } from "../../utils/data";
-import Card from "../UI/Cards/Card";
+import Card from "../UI/cards/Card";
 
 export default function FeaturedCategories() {
   const navigate = useNavigate();
